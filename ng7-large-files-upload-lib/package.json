@@ -1,0 +1,18 @@
+{
+  "name": "ng7-large-files-upload-lib",
+  "version": "1.0.1",
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0",
+    "@angular/material": "7.3.2"
+  },
+  "keywords": [
+    "angular",
+    "angular 7",
+    "uploader",
+    "file upload",
+    "large files"
+  ],
+  "author": "Martín Bianchi",
+  "license": "MIT"
+}

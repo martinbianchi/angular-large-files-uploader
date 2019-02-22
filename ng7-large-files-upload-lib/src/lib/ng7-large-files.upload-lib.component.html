@@ -1,0 +1,23 @@
+<div>
+  <input type="file" #file style="display: none" (change)="onFilesAdded()" multiple />
+  <div class="evidences-icon-container">
+    <span>{{title}}</span>
+    <i *ngIf="canUpload" class="material-icons add-file-icon" (click)="addFiles()">add_circle</i>
+  </div>
+  <div *ngIf="canDownload || canDelete">
+    <div class="file-container" *ngFor="let oa of _oldAttachments">
+      <a *ngIf="canDownload" href="{{oa.url}}">
+        <i class="material-icons file-icon download-file-icon">vertical_align_bottom</i>
+      </a>
+      <i *ngIf="canDelete" class="material-icons file-icon delete-file-icon" (click)="deleteFiles(oa)">delete</i>
+      <span>{{oa.name}}</span>
+    </div>
+  </div>
+  <div *ngIf="canUpload">
+    <div class="file-container" *ngFor="let na of _newAttachments">
+      <i class="material-icons file-icon remove-file-icon" (click)="removeFiles(na, _newAttachments)">remove_circle</i>
+      <span>{{na.name}}</span>
+    </div>
+  </div>
+</div>
+<button *ngIf="canSendData" (click)="onSaveChanges()">{{saveButtonText}}</button>
